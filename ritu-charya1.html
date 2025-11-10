@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu Charya - Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles_ritu-charya1.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Virtual Herbal Garden</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#plants">Explore Plants</a>
+            <a href="index.html#search">Search & Filter</a>
+            <a href="ritu-charya1.html" style="text-decoration: underline;">Ritu Charya</a>
+            <a href="quiz.html">Test Your Knowledge</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <section id="intro">
+            <div class="container">
+                <h2>Ritu Charya</h2>
+                <p class="subtitle"><strong>Ayurvedic Seasonal Lifestyle Practices</strong></p>
+                <p class="description">Ritu Charya is an ancient Ayurvedic practice mentioned in Charaka Samhita (Chapter 6) that guides us to live in harmony with nature's seasonal cycles. By following specific lifestyle and dietary guidelines for each season (Ritu), we can maintain optimal health and prevent diseases throughout the year.</p>
+            </div>
+        </section>
+
+        <!-- Ritu Selection Section -->
+        <section id="ritu-selection">
+            <div class="container">
+                <h2>Select a Season (Ritu)</h2>
+                
+                <!-- Ritu Cards Grid -->
+                <div class="ritu-grid">
+                    <!-- Vasant Ritu Card -->
+                    <div class="ritu-card" data-ritu="vasant">
+                        <div class="ritu-image-container">
+                            <img src="images/spring.jpg" alt="Spring Season" class="ritu-image" onerror="this.style.display='none';">
+                        </div>
+                        <div class="ritu-icon">🌸</div>
+                        <h3>Vasant Ritu</h3>
+                        <p>Spring Season<br>(March - May)</p>
+                    </div>
+                    
+                    <!-- Grishma Ritu Card -->
+                    <div class="ritu-card" data-ritu="grishma">
+                        <div class="ritu-image-container">
+                            <img src="images/summer.jpg" alt="Summer Season" class="ritu-image" onerror="this.style.display='none';">
+                        </div>
+                        <div class="ritu-icon">☀️</div>
+                        <h3>Grishma Ritu</h3>
+                        <p>Summer Season<br>(May - July)</p>
+                    </div>
+                    
+                    <!-- Varsha Ritu Card -->
+                    <div class="ritu-card" data-ritu="varsha">
+                        <div class="ritu-image-container">
+                            <img src="images/monsoon.jpg" alt="Monsoon Season" class="ritu-image" onerror="this.style.display='none';">
+                        </div>
+                        <div class="ritu-icon">🌧️</div>
+                        <h3>Varsha Ritu</h3>
+                        <p>Monsoon Season<br>(July - September)</p>
+                    </div>
+                    
+                    <!-- Sharad Ritu Card -->
+                    <div class="ritu-card" data-ritu="sharad">
+                        <div class="ritu-image-container">
+                            <img src="images/autumn.jpg" alt="Autumn Season" class="ritu-image" onerror="this.style.display='none';">
+                        </div>
+                        <div class="ritu-icon">🍂</div>
+                        <h3>Sharad Ritu</h3>
+                        <p>Autumn Season<br>(September - November)</p>
+                    </div>
+                    
+                    <!-- Shishir Ritu Card -->
+                    <div class="ritu-card" data-ritu="shishir">
+                        <div class="ritu-image-container">
+                            <img src="images/winter.jpg" alt="Winter Season" class="ritu-image" onerror="this.style.display='none';">
+                        </div>
+                        <div class="ritu-icon">❄️</div>
+                        <h3>Shishir Ritu</h3>
+                        <p>Winter Season<br>(November - January)</p>
+                    </div>
+                    
+                    <!-- Sheet Ritu Card -->
+                    <div class="ritu-card" data-ritu="sheet">
+                        <div class="ritu-image-container">
+                            <img src="images/late-winter.jpg" alt="Late Winter Season" class="ritu-image" onerror="this.style.display='none';">
+                        </div>
+                        <div class="ritu-icon">🌨️</div>
+                        <h3>Sheet Ritu</h3>
+                        <p>Late Winter<br>(January - March)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ritu Details Section (Hidden by default) -->
+        <section class="ritu-details" id="ritu-details" style="display: none;">
+            <div class="container">
+                <!-- Details Header -->
+                <div class="details-header">
+                    <h2 id="selected-ritu-title">Season Details</h2>
+                    <p id="selected-ritu-description">Select a season to learn more about its Ayurvedic practices.</p>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn" id="do-btn">
+                        <span class="btn-icon">✅</span>
+                        <span>What to Do (Pathya)</span>
+                    </button>
+                    <button class="action-btn" id="avoid-btn">
+                        <span class="btn-icon">❌</span>
+                        <span>What to Avoid (Apathya)</span>
+                    </button>
+                </div>
+                
+                <!-- Guidelines Content -->
+                <div class="guidelines-content">
+                    <!-- Do Content -->
+                    <div id="do-content" class="guidelines-section" style="display: none;">
+                        <h3>Recommended Practices (According to Charaka Samhita)</h3>
+                        <div id="do-list"></div>
+                    </div>
+                    
+                    <!-- Avoid Content -->
+                    <div id="avoid-content" class="guidelines-section" style="display: none;">
+                        <h3>Things to Avoid (According to Charaka Samhita)</h3>
+                        <div id="avoid-list"></div>
+                    </div>
+                </div>
+                
+                <!-- Back Button -->
+                <button class="back-btn" id="back-btn">← Back to Seasons</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Virtual Herbal Garden. Promoting Ayurvedic Wellness and Natural Health.</p>
+            <p>Based on authentic Ayurvedic texts including Charaka Samhita</p>
+        </div>
+    </footer>
+
+    <!-- CORRECTED JavaScript Link -->
+    <script src="scripts/scripts_ritu-charya1.js"></script>
+
+    <!-- Emergency CSS Override (Remove this once external CSS works) -->
+    <style>
+        /* Emergency Grid Fix */
+        .ritu-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 30px !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 20px !important;
+        }
+
+        .ritu-card {
+            border-radius: 20px !important;
+            padding: 25px 20px !important;
+            text-align: center !important;
+            cursor: pointer !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+            min-height: 320px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            transition: all 0.4s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        /* Card Colors */
+        .ritu-card[data-ritu="vasant"] {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%) !important;
+            border: 3px solid #ff6b9d !important;
+        }
+
+        .ritu-card[data-ritu="grishma"] {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%) !important;
+            border: 3px solid #ff8a50 !important;
+        }
+
+        .ritu-card[data-ritu="varsha"] {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
+            border: 3px solid #4facfe !important;
+        }
+
+        .ritu-card[data-ritu="sharad"] {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%) !important;
+            border: 3px solid #c471ed !important;
+        }
+
+        .ritu-card[data-ritu="shishir"] {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%) !important;
+            border: 3px solid #4481eb !important;
+        }
+
+        .ritu-card[data-ritu="sheet"] {
+            background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%) !important;
+            border: 3px solid #17a2b8 !important;
+        }
+
+        /* Card Content */
+        .ritu-icon {
+            font-size: 3rem !important;
+            margin-bottom: 15px !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+        }
+
+        .ritu-card h3 {
+            font-size: 1.5rem !important;
+            color: #2c3e50 !important;
+            margin-bottom: 10px !important;
+            font-weight: bold !important;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.7) !important;
+        }
+
+        .ritu-card p {
+            color: #34495e !important;
+            font-size: 1.1rem !important;
+            line-height: 1.4 !important;
+            margin: 0 !important;
+            font-weight: 500 !important;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5) !important;
+        }
+
+        /* Hover Effects */
+        .ritu-card:hover {
+            transform: translateY(-15px) scale(1.02) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25) !important;
+        }
+
+        .ritu-card.active {
+            transform: translateY(-10px) scale(1.05) !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Image Styling */
+        .ritu-image-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .ritu-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .ritu-card:hover .ritu-image {
+            transform: scale(1.1);
+        }
+
+        /* Intro Section */
+        #intro {
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #intro h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        #intro .subtitle {
+            font-size: 1.3rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        #intro .description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .ritu-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 25px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ritu-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                padding: 15px !important;
+            }
+            
+            .ritu-card {
+                min-height: 280px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ritu-card h3 {
+                font-size: 1.3rem !important;
+            }
+            
+            .ritu-card p {
+                font-size: 1rem !important;
+            }
+            
+            .ritu-icon {
+                font-size: 2.5rem !important;
+            }
+            
+            .ritu-image-container {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</body>
+</html>

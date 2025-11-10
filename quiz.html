@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Quiz - Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+<body>
+    <header>
+        <h1>Virtual Herbal Garden</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#plants">Explore Plants</a>
+            <a href="index.html#search">Search & Filter</a>
+            <a href="ritu-charya1.html">Ritu Charya</a>
+            <a href="quiz.html" style="text-decoration: underline;">Test Your Knowledge</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Quiz Welcome Section -->
+        <section id="quiz-welcome" class="quiz-section">
+            <div class="container">
+                <div class="welcome-content">
+                    <h2>🧠 Test Your Ayurvedic Knowledge</h2>
+                    <p class="quiz-description">
+                        Challenge yourself with questions about medicinal plants, Ritu Charya (seasonal lifestyle), 
+                        and Ayurvedic wisdom from our Virtual Herbal Garden. Test how much you've learned!
+                    </p>
+                    <div class="quiz-info">
+                        <div class="info-item">
+                            <span class="info-icon">📝</span>
+                            <div class="info-text">
+                                <h3>10 Questions</h3>
+                                <p>Carefully curated questions</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <div class="info-text">
+                                <h3>No Time Limit</h3>
+                                <p>Take your time to think</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏆</span>
+                            <div class="info-text">
+                                <h3>Instant Results</h3>
+                                <p>Get your score immediately</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="start-quiz-btn" class="start-btn">Start Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Name Input Section -->
+        <section id="name-input" class="quiz-section" style="display: none;">
+            <div class="container">
+                <div class="name-form">
+                    <h2>Before We Begin...</h2>
+                    <p>Please enter your name so we can personalize your quiz experience:</p>
+                    <div class="input-group">
+                        <input type="text" id="user-name" placeholder="Enter your full name" maxlength="50">
+                        <button id="submit-name-btn" class="submit-btn">Continue</button>
+                    </div>
+                    <p class="privacy-note">🔒 Your name is only used for this quiz session and is not stored permanently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Questions Section -->
+        <section id="quiz-questions" class="quiz-section" style="display: none;">
+            <div class="container">
+                <div class="quiz-header">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="quiz-info-bar">
+                        <span id="question-counter">Question 1 of 10</span>
+                        <span id="user-display">Welcome, <span id="display-name"></span>!</span>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="question-card">
+                        <h3 id="question-text"></h3>
+                        <div id="options-container" class="options-container"></div>
+                        <div class="question-actions">
+                            <button id="next-btn" class="next-btn" disabled>Next Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Results Section -->
+        <section id="quiz-results" class="quiz-section" style="display: none;">
+            <div class="container">
+                <div class="results-content">
+                    <div class="results-header">
+                        <h2>🎉 Quiz Completed!</h2>
+                        <div class="user-result">
+                            <h3>Congratulations, <span id="result-name"></span>!</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <div class="score-number">
+                                <span id="final-score">0</span>
+                                <span class="score-total">/10</span>
+                            </div>
+                            <div class="score-percentage" id="score-percentage">0%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-message">
+                        <h3 id="performance-title"></h3>
+                        <p id="performance-description"></p>
+                    </div>
+                    
+                    <div class="results-breakdown">
+                        <h3>📊 Your Performance</h3>
+                        <div class="breakdown-stats">
+                            <div class="stat-item correct">
+                                <span class="stat-icon">✅</span>
+                                <span class="stat-label">Correct Answers</span>
+                                <span class="stat-value" id="correct-count">0</span>
+                            </div>
+                            <div class="stat-item incorrect">
+                                <span class="stat-icon">❌</span>
+                                <span class="stat-label">Incorrect Answers</span>
+                                <span class="stat-value" id="incorrect-count">0</span>
+                            </div>
+                            <div class="stat-item accuracy">
+                                <span class="stat-icon">🎯</span>
+                                <span class="stat-label">Accuracy</span>
+                                <span class="stat-value" id="accuracy-percentage">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-actions">
+                        <button id="retake-quiz-btn" class="retake-btn">🔄 Retake Quiz</button>
+                        <button id="explore-more-btn" class="explore-btn">🌿 Explore More Plants</button>
+                        <button id="share-result-btn" class="share-btn">📤 Share Result</button>
+                    </div>
+                    
+                    <div class="learning-suggestions">
+                        <h3>📚 Want to Learn More?</h3>
+                        <div class="suggestion-links">
+                            <a href="index.html#plants" class="suggestion-link">
+                                <span>🌱</span> Explore Medicinal Plants
+                            </a>
+                            <a href="ritu-charya.html" class="suggestion-link">
+                                <span>🗓️</span> Learn About Ritu Charya
+                            </a>
+                            <a href="index.html" class="suggestion-link">
+                                <span>🏠</span> Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Virtual Herbal Garden. Promoting Ayurvedic Wellness and Natural Health.</p>
+        <p>Test your knowledge and deepen your understanding of medicinal plants and Ayurveda</p>
+    </footer>
+
+    <script src="scripts/quiz.js"></script>
+</body>
+</html>

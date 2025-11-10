@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritu Charya - Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/style_ritu-charya.css">
+</head>
+<body>
+    <header>
+        <h1>Virtual Herbal Garden</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#plants">Explore Plants</a>
+            <a href="index.html#search">Search & Filter</a>
+            <a href="ritu-charya.html" style="text-decoration: underline;">Ritu Charya</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Ritu Charya</h2>
+            <p><strong>Ayurvedic Seasonal Lifestyle Practices</strong></p>
+            <p>Ritu Charya is an ancient Ayurvedic practice mentioned in Charaka Samhita (Chapter 6) that guides us to live in harmony with nature's seasonal cycles. By following specific lifestyle and dietary guidelines for each season (Ritu), we can maintain optimal health and prevent diseases throughout the year.</p>
+        </section>
+
+        <section id="ritu-selection">
+            <h2>Select a Season (Ritu)</h2>
+            <div class="ritu-grid">
+                <div class="ritu-card" data-ritu="vasant">
+                    <div class="ritu-icon">🌸</div>
+                    <h3>Vasant Ritu</h3>
+                    <p>Spring Season<br>(March - May)</p>
+                </div>
+                
+                <div class="ritu-card" data-ritu="grishma">
+                    <div class="ritu-icon">☀️</div>
+                    <h3>Grishma Ritu</h3>
+                    <p>Summer Season<br>(May - July)</p>
+                </div>
+                
+                <div class="ritu-card" data-ritu="varsha">
+                    <div class="ritu-icon">🌧️</div>
+                    <h3>Varsha Ritu</h3>
+                    <p>Monsoon Season<br>(July - September)</p>
+                </div>
+                
+                <div class="ritu-card" data-ritu="sharad">
+                    <div class="ritu-icon">🍂</div>
+                    <h3>Sharad Ritu</h3>
+                    <p>Autumn Season<br>(September - November)</p>
+                </div>
+                
+                <div class="ritu-card" data-ritu="shishir">
+                    <div class="ritu-icon">❄️</div>
+                    <h3>Shishir Ritu</h3>
+                    <p>Winter Season<br>(November - January)</p>
+                </div>
+                
+                <div class="ritu-card" data-ritu="sheet">
+                    <div class="ritu-icon">🌨️</div>
+                    <h3>Sheet Ritu</h3>
+                    <p>Late Winter<br>(January - March)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ritu-details" id="ritu-details" style="display: none;">
+            <div class="details-header">
+                <h2 id="selected-ritu-title"></h2>
+                <p id="selected-ritu-description"></p>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-btn" id="do-btn">
+                    <span class="btn-icon">✅</span>
+                    What to Do (Pathya)
+                </button>
+                <button class="action-btn" id="avoid-btn">
+                    <span class="btn-icon">❌</span>
+                    What to Avoid (Apathya)
+                </button>
+            </div>
+            
+            <div class="guidelines-content">
+                <div id="do-content" class="guidelines-section" style="display: none;">
+                    <h3>Recommended Practices (According to Charaka Samhita)</h3>
+                    <div id="do-list"></div>
+                </div>
+                
+                <div id="avoid-content" class="guidelines-section" style="display: none;">
+                    <h3>Things to Avoid (According to Charaka Samhita)</h3>
+                    <div id="avoid-list"></div>
+                </div>
+            </div>
+            
+            <button class="back-btn" id="back-btn">← Back to Seasons</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Virtual Herbal Garden. Promoting Ayurvedic Wellness and Natural Health.</p>
+        <p>Based on authentic Ayurvedic texts including Charaka Samhita</p>
+    </footer>
+
+    <script src="scripts/scripts_ritu-charya.js"></script>
+</body>
+</html>
