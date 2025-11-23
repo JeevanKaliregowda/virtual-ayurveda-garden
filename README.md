@@ -1,24 +1,50 @@
 # Virtual Garden
 
-An educational microsite that showcases Ayurvedic wisdom through interactive plant models, seasonal routines, quizzes, and now a curated list of gentle home remedies.
+An educational microsite that showcases Ayurvedic wisdom through interactive plant models, seasonal routines, quizzes, and a curated collection of gentle home remedies.
 
-## What's inside?
+## ✨ Highlights
 
-- **Home (`index.html`)** – Explore medicinal plants with 3D models, quick facts, and a search utility.
-- **Ritu Charya (`ritu-charya1.html`)** – Season-wise (Ritu) lifestyle guidelines derived from classical Ayurvedic texts.
-- **Knowledge Quiz (`quiz.html`)** – Ten-question quiz that reinforces key takeaways.
-- **Ayurvedic Home Remedies (`ayurvedic-remedies.html`)** – Newly added page featuring kitchen-friendly tips for colds, coughs, low-grade fevers, sore throats, minor cuts, pimples, and other mild discomforts, complete with attribution-safe images.
+- **Immersive plant explorer (`index.html`)** – View medicinal plants in 3D using `<model-viewer>`, read quick facts, and filter by ailment.
+- **Ritu Charya guide (`ritu-charya1.html`)** – Season-wise habits derived from classical Ayurvedic texts.
+- **Knowledge quiz (`quiz.html`)** – Ten-question, auto-scored quiz that reinforces key takeaways.
+- **Home-remedy library (`ayurvedic-remedies.html`)** – Kitchen-friendly tips for coughs, colds, sore throats, pimples, minor cuts, and other mild discomforts, each paired with attribution-safe imagery.
 
-## Getting started
+## 🌐 Live demos
 
-1. Clone or download the repository.
-2. Serve the project over HTTP/HTTPS (for example run `npx serve .` or VS Code Live Server). Browsers block `.glb` files when opened from the `file://` protocol, so a local server is required for the 3D plants to appear.
-3. For best visuals, keep the `models`, `images`, `scripts`, and `styles` folders in the same directory as the HTML files.
+- GitHub Pages: https://jeevankaliregowda.github.io/virtual-garden/
+- Netlify: https://ayush-herbal-garden.netlify.app/
+
+## 📸 Preview
+
+![Home on GitHub Pages](screenshots/home-github.png)
+![Home on Netlify](screenshots/home-netlify.png)
+![Ayurvedic remedies](screenshots/remedies-github.png)
+
+## 🚀 Getting started
+
+1. Clone or download this repository.
+2. Serve the project over HTTP/HTTPS (for example `python -m http.server 8000`, `npx serve .`, or VS Code Live Server). Browsers block `.glb` files on the `file://` protocol, so a local server is required for the 3D plants to appear.
+3. Keep the `models`, `images`, `scripts`, and `styles` folders at the same level as the HTML files so relative paths resolve correctly.
 
 ### Optional tooling
 
-If you prefer using a dev server, you can launch one with any static-server CLI (e.g., `npx serve .`). This is optional; the project works as plain HTML.
+- **Quick static server:** Any zero-config static server CLI works; pick your favorite.
+- **Screenshot automation:** See `scripts/capture_screenshots.py` to regenerate the preview images inside `screenshots/` using Playwright + Chromium.
 
-## Contributing ideas
+#### Updating screenshots
 
-Have a verified herbal tip or plant to suggest? Use the Google Form linked in the footer to submit your recommendation and help expand the Virtual Herbal Garden knowledge base.
+```
+python -m pip install --user playwright
+python -m playwright install chromium
+python scripts/capture_screenshots.py
+```
+
+The script visits the GitHub Pages, Netlify, and remedies URLs, then saves full-page PNGs to `screenshots/`.
+
+## 🤝 Contributing ideas
+
+Have a verified herbal tip or plant to suggest? Use the Google Form linked in the site footer to submit your recommendation and help expand the Virtual Herbal Garden knowledge base.
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
