@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Herbal Garden</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
+    <script type="module" src="scripts/model-viewer.min.js"></script>
 </head>
 <body>
     <header>
@@ -15,6 +13,7 @@
         <nav>
             <a href="#plants">Explore Plants</a>
             <a href="#search">Search & Filter</a>
+            <a href="ayurvedic-remedies.html">Home Remedies</a>
             <a href="ritu-charya1.html">Ritu Charya</a>
             <a href="quiz.html">Test Your Knowledge</a>
         </nav>
@@ -27,6 +26,9 @@
         </section>
 
         <section id="plants">
+            <div id="model-warning" class="model-warning" hidden>
+                <strong>Heads up:</strong> 3D plant models need to be served over <code>http://</code> or <code>https://</code>. Start any local server (for example, run <code>npx serve .</code> in this folder) and refresh this page to see the interactive models.
+            </div>
             <h2>Interactive 3D Models</h2>
             <div id="tulsi" class="model-container">
                 <!-- Tulsi -->
@@ -140,6 +142,15 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.protocol === 'file:') {
+                const warning = document.getElementById('model-warning');
+                if (warning) {
+                    warning.hidden = false;
+                }
+            }
+        });
+
         // Example search functionality
         function searchPlants() {
             const input = document.getElementById('search-input').value.toLowerCase();

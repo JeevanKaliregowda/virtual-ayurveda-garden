@@ -1,0 +1,178 @@
+:root {
+    --deep-green: #1b5e20;
+    --leaf-green: #4caf50;
+    --soft-cream: #fffaf2;
+    --card-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background: #f7f9f4;
+    color: #1f2a24;
+}
+
+main {
+    padding: 40px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    background: white;
+    border-radius: 28px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 40px;
+}
+
+.hero-content h2 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+}
+
+.hero-content p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.hero-content .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.85rem;
+    color: var(--leaf-green);
+    margin-bottom: 8px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    box-shadow: var(--card-shadow);
+}
+
+.remedy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.remedy-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.remedy-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-body h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--deep-green);
+}
+
+.symptoms {
+    font-weight: 600;
+    color: #546e7a;
+    margin-bottom: 12px;
+}
+
+.card-body ul {
+    padding-left: 18px;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+}
+
+.card-body li + li {
+    margin-top: 6px;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #c62828;
+    background: #fff5f5;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.tips-section {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.tips-card {
+    background: var(--soft-cream);
+    border-left: 6px solid var(--leaf-green);
+    padding: 24px;
+    border-radius: 18px;
+    box-shadow: var(--card-shadow);
+}
+
+.tips-card h3 {
+    margin-top: 0;
+    color: var(--deep-green);
+}
+
+.tips-card ul {
+    padding-left: 18px;
+    line-height: 1.6;
+}
+
+.cta {
+    text-align: center;
+    background: linear-gradient(135deg, #69f0ae, #00c853);
+    padding: 40px 24px;
+    border-radius: 28px;
+    color: white;
+    box-shadow: var(--card-shadow);
+}
+
+.cta h3 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 32px;
+    background: white;
+    color: var(--deep-green);
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 28px;
+    }
+
+    .card-body ul {
+        padding-left: 16px;
+    }
+}
