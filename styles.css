@@ -1,39 +1,135 @@
+/* Import Google Fonts for Ayurvedic theme */
+@import url('https://fonts.googleapis.com/css2?family=Sura:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Ayurvedic Color Palette */
+:root {
+    --saffron: #FF9933;
+    --turmeric-yellow: #FFCC00;
+    --maroon: #800000;
+    --gold: #DAA520;
+    --sandalwood: #E5C29F;
+    --brown: #654321;
+    --deep-maroon: #5C0A0A;
+    --cream: #FFF8E7;
+    --terracotta: #C65D3B;
+}
+
 body { 
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
+    background: var(--cream);
+    /* Subtle lotus motif background - PLACEHOLDER: Replace with actual image */
+    /* background-image: url('/assets/lotus-motif.png'); */
+    background-size: 200px;
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 header {
-    background: linear-gradient(to bottom, #00f808, #2e7d32);
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--saffron) 50%, var(--gold) 100%);
     color: white;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative border pattern */
+header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--gold) 0px,
+        var(--gold) 10px,
+        var(--maroon) 10px,
+        var(--maroon) 20px
+    );
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-family: 'Sura', serif;
+    font-size: 2.8em;
     margin: 0;
     font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
 }
 
 nav a {
-    color: white;
+    color: var(--cream);
     text-decoration: none;
     margin: 0 15px;
-    font-weight: bold;
-    font-size: 1.2em;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    transform: translateY(-2px);
 }
 
 main {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: transparent;
+}
+
+main section#intro {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sandalwood) 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 6px 20px rgba(101, 67, 33, 0.2);
+    position: relative;
+}
+
+/* Corner motif decorations - PLACEHOLDER: Uncomment when assets are available */
+/*
+main section#intro::before,
+main section#intro::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('/assets/corner-motif.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+main section#intro::before {
+    top: 10px;
+    left: 10px;
+}
+
+main section#intro::after {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(180deg);
+}
+*/
+
+main section#intro h2 {
+    font-family: 'Sura', serif;
+    color: var(--maroon);
+    font-size: 2.2em;
+    margin-top: 0;
+}
+
+main section#intro p {
+    color: var(--brown);
+    line-height: 1.8;
+    font-size: 1.1em;
 }
 
 .model-container {
@@ -41,12 +137,45 @@ main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    background: url('model-container-background.jpg') no-repeat center center/cover;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(229, 194, 159, 0.3) 100%);
+    /* PLACEHOLDER: Uncomment when mandala pattern is available */
+    /* background-image: url('/assets/mandala-pattern.png'); */
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(101, 67, 33, 0.3);
+    border: 3px solid var(--gold);
+    position: relative;
 }
+
+/* Decorative corner motifs for model containers */
+/* PLACEHOLDER: Uncomment when corner-motif.svg is available */
+/*
+.model-container::before,
+.model-container::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('/assets/corner-motif.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.model-container::before {
+    top: 15px;
+    left: 15px;
+}
+
+.model-container::after {
+    bottom: 15px;
+    right: 15px;
+    transform: rotate(180deg);
+}
+*/
 
 .model-container model-viewer {
     width: 100%;
@@ -59,7 +188,11 @@ main {
     max-width: 400px;
     text-align: left;
     margin: 10px;
-    color: #2c3e50;
+    color: var(--brown);
+    background: rgba(255, 248, 231, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid var(--saffron);
 }
 
 .plant-info img {
@@ -67,11 +200,15 @@ main {
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
+    border: 3px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(101, 67, 33, 0.2);
 }
 
 .plant-info h3 {
+    font-family: 'Sura', serif;
     font-size: 1.8em;
     margin-bottom: 10px;
+    color: var(--maroon);
 }
 
 .plant-info p {
@@ -84,14 +221,19 @@ main {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
 }
 
 .plant-info .learn-more:hover {
-    background-color: #45a049;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 153, 51, 0.4);
 }
 
 input[type="text"] {
@@ -99,47 +241,83 @@ input[type="text"] {
     margin-right: 10px;
     width: 80%;
     max-width: 300px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 2px solid var(--gold);
+    background: var(--cream);
+    font-family: 'Lora', serif;
 }
 
 button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: 'Lora', serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
 }
 
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 153, 51, 0.4);
 }
 
 .model-warning {
-    background: #fff8e1;
-    border: 1px solid #ffb74d;
-    color: #6d4c41;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--turmeric-yellow) 20%);
+    border: 2px solid var(--saffron);
+    color: var(--brown);
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(101, 67, 33, 0.2);
 }
 
 .model-warning code {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(101, 67, 33, 0.1);
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 0.95em;
+    color: var(--maroon);
 }
 
 footer {
-    background: linear-gradient(to bottom,#2e7d32, #00f808) ;
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--saffron) 50%, var(--gold) 100%);
     color: white;
     text-align: center;
     padding: 20px 0;
-    margin-top: 20px;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    box-shadow: 0 -4px 12px rgba(128, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Decorative border pattern for footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--gold) 0px,
+        var(--gold) 10px,
+        var(--maroon) 10px,
+        var(--maroon) 20px
+    );
+}
+
+footer a {
+    color: var(--cream);
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--turmeric-yellow);
 }
 
 #search-results {

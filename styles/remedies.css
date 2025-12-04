@@ -1,13 +1,29 @@
+/* Import Google Fonts for Ayurvedic theme */
+@import url('https://fonts.googleapis.com/css2?family=Sura:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Ayurvedic Color Palette */
 :root {
-    --deep-green: #1b5e20;
-    --leaf-green: #4caf50;
-    --soft-cream: #fffaf2;
-    --card-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    --saffron: #FF9933;
+    --turmeric-yellow: #FFCC00;
+    --maroon: #800000;
+    --gold: #DAA520;
+    --sandalwood: #E5C29F;
+    --brown: #654321;
+    --deep-maroon: #5C0A0A;
+    --cream: #FFF8E7;
+    --terracotta: #C65D3B;
+    
+    /* Legacy variables updated */
+    --deep-green: var(--maroon);
+    --leaf-green: var(--saffron);
+    --soft-cream: var(--cream);
+    --card-shadow: 0 12px 24px rgba(101, 67, 33, 0.15);
 }
 
 body {
-    background: #f7f9f4;
-    color: #1f2a24;
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'Lora', serif;
 }
 
 main {
@@ -17,7 +33,7 @@ main {
 }
 
 .hero {
-    background: white;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sandalwood) 100%);
     border-radius: 28px;
     padding: 40px;
     display: grid;
@@ -26,24 +42,56 @@ main {
     align-items: center;
     box-shadow: var(--card-shadow);
     margin-bottom: 40px;
+    border: 3px solid var(--gold);
+    position: relative;
 }
 
+/* Decorative corner motifs - PLACEHOLDER: Uncomment when assets are available */
+/*
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('/assets/corner-motif.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.hero::before {
+    top: 15px;
+    left: 15px;
+}
+
+.hero::after {
+    bottom: 15px;
+    right: 15px;
+    transform: rotate(180deg);
+}
+*/
+
 .hero-content h2 {
+    font-family: 'Sura', serif;
     font-size: 2.2rem;
     margin: 10px 0;
+    color: var(--maroon);
 }
 
 .hero-content p {
     line-height: 1.6;
     margin-bottom: 10px;
+    color: var(--brown);
 }
 
 .hero-content .eyebrow {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 0.85rem;
-    color: var(--leaf-green);
+    color: var(--saffron);
     margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .hero-image {
@@ -54,6 +102,7 @@ main {
     object-fit: cover;
     display: block;
     box-shadow: var(--card-shadow);
+    border: 3px solid var(--gold);
 }
 
 .remedy-grid {
@@ -63,18 +112,48 @@ main {
 }
 
 .remedy-card {
-    background: white;
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(229, 194, 159, 0.3) 100%);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
+    border: 2px solid var(--gold);
+    position: relative;
 }
+
+/* Decorative corner motifs for cards - PLACEHOLDER: Uncomment when assets are available */
+/*
+.remedy-card::before,
+.remedy-card::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('/assets/corner-motif.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.remedy-card::before {
+    top: 10px;
+    left: 10px;
+}
+
+.remedy-card::after {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(180deg);
+}
+*/
 
 .remedy-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    border-bottom: 3px solid var(--gold);
 }
 
 .card-body {
@@ -84,12 +163,13 @@ main {
 .card-body h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: var(--deep-green);
+    color: var(--maroon);
+    font-family: 'Sura', serif;
 }
 
 .symptoms {
     font-weight: 600;
-    color: #546e7a;
+    color: var(--brown);
     margin-bottom: 12px;
 }
 
@@ -105,10 +185,11 @@ main {
 
 .note {
     font-size: 0.9rem;
-    color: #c62828;
-    background: #fff5f5;
+    color: var(--maroon);
+    background: rgba(255, 153, 51, 0.1);
     padding: 8px 12px;
     border-radius: 10px;
+    border-left: 3px solid var(--saffron);
 }
 
 .tips-section {
@@ -119,16 +200,19 @@ main {
 }
 
 .tips-card {
-    background: var(--soft-cream);
-    border-left: 6px solid var(--leaf-green);
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sandalwood) 100%);
+    border-left: 6px solid var(--saffron);
     padding: 24px;
     border-radius: 18px;
     box-shadow: var(--card-shadow);
+    border: 2px solid var(--gold);
+    border-left-width: 6px;
 }
 
 .tips-card h3 {
     margin-top: 0;
-    color: var(--deep-green);
+    color: var(--maroon);
+    font-family: 'Sura', serif;
 }
 
 .tips-card ul {
@@ -138,16 +222,18 @@ main {
 
 .cta {
     text-align: center;
-    background: linear-gradient(135deg, #69f0ae, #00c853);
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
     padding: 40px 24px;
     border-radius: 28px;
     color: white;
     box-shadow: var(--card-shadow);
+    border: 3px solid var(--maroon);
 }
 
 .cta h3 {
     margin-top: 0;
     font-size: 2rem;
+    font-family: 'Sura', serif;
 }
 
 .cta-button {
@@ -155,16 +241,18 @@ main {
     margin-top: 16px;
     padding: 12px 32px;
     background: white;
-    color: var(--deep-green);
+    color: var(--maroon);
     border-radius: 999px;
     font-weight: 700;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid var(--maroon);
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: var(--cream);
 }
 
 @media (max-width: 600px) {

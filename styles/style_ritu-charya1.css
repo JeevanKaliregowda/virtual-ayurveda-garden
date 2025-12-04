@@ -1,4 +1,20 @@
-/* Complete Enhanced Ritu Charya Styles - Updated Version */
+/* Complete Enhanced Ritu Charya Styles - Ayurvedic Theme */
+/* Import Google Fonts for Ayurvedic theme */
+@import url('https://fonts.googleapis.com/css2?family=Sura:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Ayurvedic Color Palette */
+:root {
+    --saffron: #FF9933;
+    --turmeric-yellow: #FFCC00;
+    --maroon: #800000;
+    --gold: #DAA520;
+    --sandalwood: #E5C29F;
+    --brown: #654321;
+    --deep-maroon: #5C0A0A;
+    --cream: #FFF8E7;
+    --terracotta: #C65D3B;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +22,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lora', serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--brown);
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sandalwood) 100%);
     min-height: 100vh;
 }
 
@@ -23,21 +39,23 @@ body {
 #intro {
     padding: 40px 20px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(229, 194, 159, 0.5) 100%);
     margin: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(101, 67, 33, 0.2);
+    border: 3px solid var(--gold);
 }
 
 #intro h2 {
+    font-family: 'Sura', serif;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: var(--maroon);
     margin-bottom: 10px;
 }
 
 #intro p {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--brown);
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 15px;
@@ -46,15 +64,16 @@ body {
 /* Ritu Selection Section */
 #ritu-selection {
     padding: 60px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: transparent;
 }
 
 #ritu-selection h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: var(--maroon);
     margin-bottom: 50px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 4px rgba(101, 67, 33, 0.1);
+    font-family: 'Sura', serif;
 }
 
 /* Grid Layout - 3 columns, 2 rows */
@@ -68,35 +87,35 @@ body {
     padding: 20px !important;
 }
 
-/* Individual Ritu Card Colors */
+/* Individual Ritu Card Colors - Ayurvedic Theme */
 .ritu-card[data-ritu="vasant"] {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%) !important;
-    border: 3px solid #ff6b9d !important;
+    background: linear-gradient(135deg, var(--sandalwood) 0%, var(--turmeric-yellow) 50%, var(--cream) 100%) !important;
+    border: 3px solid var(--gold) !important;
 }
 
 .ritu-card[data-ritu="grishma"] {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%) !important;
-    border: 3px solid #ff8a50 !important;
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--turmeric-yellow) 100%) !important;
+    border: 3px solid var(--terracotta) !important;
 }
 
 .ritu-card[data-ritu="varsha"] {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
-    border: 3px solid #4facfe !important;
+    background: linear-gradient(135deg, var(--sandalwood) 0%, var(--cream) 100%) !important;
+    border: 3px solid var(--gold) !important;
 }
 
 .ritu-card[data-ritu="sharad"] {
-    background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%) !important;
-    border: 3px solid #c471ed !important;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sandalwood) 50%, var(--gold) 100%) !important;
+    border: 3px solid var(--saffron) !important;
 }
 
 .ritu-card[data-ritu="shishir"] {
-    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%) !important;
-    border: 3px solid #4481eb !important;
+    background: linear-gradient(135deg, var(--sandalwood) 0%, var(--turmeric-yellow) 100%) !important;
+    border: 3px solid var(--maroon) !important;
 }
 
 .ritu-card[data-ritu="sheet"] {
-    background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%) !important;
-    border: 3px solid #17a2b8 !important;
+    background: linear-gradient(135deg, var(--turmeric-yellow) 0%, var(--gold) 100%) !important;
+    border: 3px solid var(--brown) !important;
 }
 
 /* Main Ritu Card Styles */
@@ -173,26 +192,27 @@ body {
 
 .ritu-card h3 {
     font-size: 1.5rem !important;
-    color: #2c3e50 !important;
+    color: var(--maroon) !important;
     margin-bottom: 10px !important;
     font-weight: bold !important;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.7) !important;
+    text-shadow: 1px 1px 2px rgba(255, 248, 231, 0.7) !important;
+    font-family: 'Sura', serif !important;
 }
 
 .ritu-card p {
-    color: #34495e !important;
+    color: var(--brown) !important;
     font-size: 1.1rem !important;
     line-height: 1.4 !important;
     margin: 0 !important;
     font-weight: 500 !important;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.5) !important;
+    text-shadow: 1px 1px 2px rgba(255, 248, 231, 0.5) !important;
 }
 
 /* Enhanced Ritu Details Section */
 .ritu-details {
     padding: 60px 20px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border-top: 3px solid #4CAF50;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--sandalwood) 100%);
+    border-top: 3px solid var(--gold);
     min-height: 100vh;
 }
 
@@ -203,27 +223,24 @@ body {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(229, 194, 159, 0.5) 100%);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border: 3px solid #4CAF50;
+    box-shadow: 0 15px 35px rgba(101, 67, 33, 0.2);
+    border: 3px solid var(--gold);
 }
 
 .details-header h2 {
     font-size: 2.8rem;
-    color: #2c3e50;
+    color: var(--maroon);
     margin-bottom: 25px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(101, 67, 33, 0.1);
+    font-family: 'Sura', serif;
 }
 
 .details-header p {
     font-size: 1.4rem;
-    color: #555;
+    color: var(--brown);
     line-height: 1.8;
     font-weight: 500;
 }
